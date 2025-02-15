@@ -3,7 +3,9 @@
 🚀 **LLM-Driven Multimodal Knowledge Graph Construction for Bridges**  
 A framework that integrates Large Language Models (LLMs) with AI-powered tools to construct multimodal knowledge graphs for bridge infrastructure.
 
-<img src="figures/workflow.png" alt="Bridge-MMKG-Agent Workflow" width="600">
+<p align="center">
+    <img src="figures/workflow.png" alt="Bridge-MMKG-Agent Workflow" width="600">
+</p>
 
 ## 📌 Overview
 Bridges are critical infrastructure in transportation networks. Traditional knowledge graphs (KGs) rely on text-based information, but bridge monitoring requires multimodal data, including:
@@ -39,20 +41,33 @@ The system follows a **Thought-Action-Observation** paradigm, allowing it to dec
 - **Simple Tasks** (e.g., downloading satellite images, querying bridge data): Direct tool invocation.
 - **Complex Tasks** (e.g., bridge segmentation, knowledge graph construction): Decomposed into multiple subtasks, dynamically managing tool execution for data flow and correctness.
 
-📌 **Workflow Diagram**:  
-<img src="figures/dynamic_task_workflow.png" alt="Dynamic Task Workflow" width="400">
+<p align="center">
+    <img src="figures/dynamic_task_workflow.png" alt="Dynamic Task Workflow" width="400">
+</p>
 
 ---
 
 ### 🛠️ Multimodal Knowledge Graph Construction Toolkit
 **Bridge-MMKG-Agent** consists of **four core toolkits**, each handling different stages of data processing.
 
-| **Toolkit**      | **Data Type** | **Function** | **Methods** |
-|-----------------|-------------|------------|------------|
-| **🗄️ Data Collection (Tool1)** | 📍 Vector <br>  🖼️ Raster <br> 📝 Text | Collects bridge-related data from external APIs | Google API (satellite imagery) <br> Baidu Baike API (bridge metadata) <br> Baidu Map API (geographic data) |
-| **🛠️ Entity Extraction (Tool2)** | 📍 Vector <br> 🖼️ Raster <br> 📝 Text | Extracts bridge entities from raw data | Arcpy Script (vector bridge point extraction) <br> SAM-Bridge (satellite image segmentation) <br> Qwen-Bridge (text information extraction) |
-| **📊 Knowledge Graph Construction (Tool3)** | 📍 Vector <br> 🖼️ Raster | Transforms extracted data into structured graph representations | GDAL Script (raster graph conversion) <br> Arcpy Script (vector graph conversion) <br> Python scripts (graph linking) |
-| **🗃️ Knowledge Integration (Tool4)** | 📝 Text <br> 📍 Vector <br> 🖼️ Raster | Facilitates database interaction and knowledge storage | Qwen-Bridge (SQL generation) |
+| **Tools**                          | **Modality** | **Method**        |
+|------------------------------------|-------------|------------------|
+| Satellite Image Download¹         | Raster      | Google API       |
+| Textual Content Download¹         | Text        | Baidu Baike API  |
+| Geographic Information Retrieval¹  | Vector      | Baidu Map API    |
+| Bridge Points Extraction²          | Vector      | Arcpy Scripts    |
+| Bridge Instance Segmentation²      | Raster      | **SAM-Bridge⁵**  |
+| Bridge Information Extraction²     | Text        | **Qwen-Bridge⁶** |
+| Vector Graph Integration³          | Vector      | Arcpy Scripts    |
+| Raster Graph Integration³          | Raster      | GDAL Scripts     |
+| Graph Connection³                  | All        | Python Scripts   |
+| SQL Generation⁴                    | Text        | **Qwen-Bridge⁶** |
+
+¹ *Tools of data collection* ² *Tools of entity extraction*  
+³ *Tools of graph construction*  ⁴ *Tools of knowledge integration*  
+⁵ *A fine-tuned version of SAM for **Prompt-free Bridge Segmentation**.*  
+⁶ *A fine-tuned version of Qwen2.5 as core driver.*  
+
 
 📌 **System Tool Architecture**:  
 To be continued...
