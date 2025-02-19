@@ -1,6 +1,9 @@
-# Bridge-MMKG-Agent
+# 🚀 LLM-Driven Multimodal Knowledge Graph Construction for Bridges
 
-🚀 **LLM-Driven Multimodal Knowledge Graph Construction for Bridges**  
+<p align="center" style="font-size:18px; font-weight:bold;">
+    IGRASS 2025 (Under Review)
+</p> 
+
 A framework that integrates Large Language Models (LLMs) with AI-powered tools to construct multimodal knowledge graphs for bridge infrastructure.
 
 <p align="center">
