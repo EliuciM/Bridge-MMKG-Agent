@@ -1,8 +1,8 @@
-# 🚀 LLM-Driven Multimodal Knowledge Graph Construction for Bridges
+# LLM-Driven Multimodal Knowledge Graph Construction for Bridges  
 
-<p align="center" style="font-size:18px; font-weight:bold;">
+<p align="center" style="font-size:18px; font-weight:bold; font-family:'Times New Roman', Times, serif;">
     IGRASS 2025 (Under Review)
-</p> 
+</p>
 
 A framework that integrates Large Language Models (LLMs) with AI-powered tools to construct multimodal knowledge graphs for bridge infrastructure.
 
